@@ -34,10 +34,10 @@ let galyp = [
 const render = () => {
   galy.html("")
   galyp.forEach((item, i) => {
-    galy.append( `<div class="fot">
+    galy.append( `<div class="fot"><a href ="#">
         <img class="cr" src="${item.img}" alt="img">
         <p>${item.title} </p>
-      </div>`);
+      </a></div>`);
   });
 };
 render();
