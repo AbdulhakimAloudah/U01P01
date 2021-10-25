@@ -47,6 +47,13 @@ input {
   justify-content: center;
 }
 
+.ff {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
 .footer {
   color: rgb(255, 255, 255);
   background-color: #39057e;
@@ -140,7 +147,7 @@ h1 {
 
 .galy1 button {
   background-color: #39057e;
-  border: none;
+  /* border: none; */
   color: white;
   padding: 15px 32px;
   text-align: center;
