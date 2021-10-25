@@ -24,13 +24,12 @@ li {
   padding: 20px;
 }
 
-  input {
+input {
   width: 500px;
   height: 40px;
   font-size: 18px;
   border: 2px solid #39057e;
-   
-} 
+}
 .logo {
   height: 93px;
 }
@@ -124,25 +123,22 @@ img {
 }
 
 /* //////// */
-.galy1{
-    
+.galy1 {
   margin: 25px;
-  
+
   /* width: 100%; */
   display: flex;
   /* flex-wrap: wrap; */
   justify-content: center;
   justify-content: space-between;
-   
 }
 
-.galy1 > img,h1 {
-padding: 20px; 
-
+.galy1 > img,
+h1 {
+  padding: 20px;
 }
- 
 
-.galy1  button {
+.galy1 button {
   background-color: #39057e;
   border: none;
   color: white;
@@ -150,6 +146,5 @@ padding: 20px;
   text-align: center;
   font-size: 16px;
   margin: 4px 2px;
-
 }
- 
+
