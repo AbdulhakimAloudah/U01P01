@@ -128,15 +128,15 @@ Ronaldo started his career at Cruzeiro and moved to PSV in 1994. He joined Barce
 ];
 const render = (tyr) => {
   galy.html("");
-  galyp.forEach((item, i) => {
+  tyr.forEach((item, i) => {
     galy.append(`<div class="fot" id="img${i}"><a href ="#">
         <img class="cr" src="${item.img}" alt="img">
         <p>${item.title} </p>
       </a></div>`);
   });
 };
-if ($(".we")[0]){
-render(galyp);
+if ($(".we")[0]) {
+  render(galyp);
 }
 const showp = (dhg) => {
   console.log(143);
@@ -168,19 +168,23 @@ const ff = () => {
   let ff = galyp.filter((item) => {
     return !item.isFF;
   });
-  ff.forEach((item, i) => {
-    $(".ff").append(`<div id="img${i}"><a href ="#">
+  if (ff.length) {
+    ff.forEach((item, i) => {
+      $(".ff").append(`<div class="fot" id="img${i}"><a href ="#">
         <img class="cr" src="${item.img}" alt="img">
         <p>${item.title} </p>
       </a></div>`);
-  });
+    });
+  } else {
+    $(".ff").append(`<p class="rty">No Favorite</p>">`);
+  }
+
   showp(ff);
 };
 
-if ($(".ff")[0]){
+if ($(".ff")[0]) {
   ff();
 }
-
 
 // slide------------------------------------------------
 var slideIndex = 0;
@@ -200,3 +204,14 @@ function showSlides() {
   slides[slideIndex - 1].style.display = "block";
   setTimeout(showSlides, 3000); // Change image every 2 seconds
 }
+////------------------------------------sar
+const sarsh = () => {
+  $(".inb").on("keyup", () => {
+    let inp = $(".inb").val().toLowerCase();
+    let filin = galyp.filter((item) => {
+      return item.title.toLowerCase().indexOf(inp) > -1;
+    });
+    render(filin);
+  });
+};
+sarsh();
