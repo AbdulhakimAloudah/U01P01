@@ -1,5 +1,5 @@
 const galy = $(".galy");
-let galyp = JSON.parse(localStorage.getItem("fivv")) ||[
+let galyp = JSON.parse(localStorage.getItem("fivv")) || [
   {
     title: "cristiano ronaldo",
     img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSNxnv0sxwWy309KxDsSqTHn2vHpWdqot6oBA&usqp=CAU",
@@ -126,7 +126,7 @@ Ronaldo started his career at Cruzeiro and moved to PSV in 1994. He joined Barce
     isFF: true,
   },
 ];
-const render = () => {
+const render = (tyr) => {
   galy.html("");
   galyp.forEach((item, i) => {
     galy.append(`<div class="fot" id="img${i}"><a href ="#">
@@ -134,46 +134,52 @@ const render = () => {
         <p>${item.title} </p>
       </a></div>`);
   });
+};
+if ($(".we")[0]){
+render(galyp);
+}
+const showp = (dhg) => {
+  console.log(143);
 
-  for (let i = 0; i < galyp.length; i++) {
+  for (let i = 0; i < dhg.length; i++) {
     $("#img" + i).click(() => {
+      console.log(dhg);
       $(".galy").hide();
       $(".galy1").append(`
-         <img src="${galyp[i].img2}" alt="">
+         <img src="${dhg[i].img2}" alt="">
           <div>
-             <h2>${galyp[i].title}</h2>
-             <P>${galyp[i].desc}</P>
+             <h2>${dhg[i].title}</h2>
+             <P>${dhg[i].desc}</P>
              <button id="fbo" onclick = "fiv(${i})" > Favorite </button>
           </div>`);
     });
   }
 };
-render();
-
-
+showp(galyp);
 // fav------------------------------------------------
-const fiv=(i) => {
-galyp[i].isFF = !galyp[i].isFF;
-console.log(galyp);
-localStorage.setItem("fivv", JSON.stringify(galyp));
-}
-
+const fiv = (i) => {
+  galyp[i].isFF = !galyp[i].isFF;
+  console.log(galyp);
+  localStorage.setItem("fivv", JSON.stringify(galyp));
+};
 
 const ff = () => {
   $(".ff").html("");
- let ff = galyp.filter ((item)=>{
-      return !item.isFF
+  let ff = galyp.filter((item) => {
+    return !item.isFF;
   });
   ff.forEach((item, i) => {
     $(".ff").append(`<div id="img${i}"><a href ="#">
         <img class="cr" src="${item.img}" alt="img">
         <p>${item.title} </p>
       </a></div>`);
-
   });
-  render();
+  showp(ff);
 };
-ff();
+
+if ($(".ff")[0]){
+  ff();
+}
 
 
 // slide------------------------------------------------
