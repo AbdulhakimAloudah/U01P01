@@ -196,3 +196,12 @@ h1 {
   transform: scale(1.07);
   transition: transform 0.4s ease;
 }
+
+
+
+
+
+@media only screen and (max-wdith:700) { 
+
+  
+}
